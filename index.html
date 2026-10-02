@@ -40,13 +40,13 @@ img,svg{display:block;max-width:100%}
 main{max-width:1100px;margin:0 auto;padding:0 16px 48px}
 .hero{margin:20px 0 28px;border-radius:24px;overflow:hidden;position:relative;
   box-shadow:0 10px 30px rgba(29,78,122,.15)}
-.hero svg{width:100%;height:auto}
+.hero-img{display:block;width:100%;height:auto;aspect-ratio:1672/941;object-fit:cover}
 .hero{cursor:zoom-in;outline:none}
 /* 큰 그림: 마우스를 올리거나 클릭하면 1초 정도 커졌다가 원래 크기로 */
 @keyframes hero-pop{0%,100%{transform:scale(1)}20%,80%{transform:scale(1.06)}}
 @keyframes hero-pop-click{0%,100%{transform:scale(1)}20%,80%{transform:scale(1.06)}}
-.hero:hover svg{animation:hero-pop 1.4s ease}
-.hero:focus svg{animation:hero-pop-click 1.4s ease}
+.hero:hover .hero-img{animation:hero-pop 1.4s ease}
+.hero:focus .hero-img{animation:hero-pop-click 1.4s ease}
 .hero:focus-visible{box-shadow:0 0 0 4px var(--sunset),0 10px 30px rgba(29,78,122,.15)}
 .hero-text{position:absolute;left:0;right:0;bottom:0;padding:24px;
   background:linear-gradient(transparent,rgba(20,40,70,.65));color:#fff}
@@ -122,7 +122,7 @@ tr:last-child td{border-bottom:0}
   .two{grid-template-columns:1fr}
   .gallery{grid-template-columns:repeat(2,1fr)}
   .hero-text{padding:16px}
-  .hero svg{min-height:280px;object-fit:cover}
+  .hero-img{min-height:280px}
 }
 @media (max-width:420px){ .gallery{grid-template-columns:1fr} }
 </style>
@@ -150,30 +150,7 @@ tr:last-child td{border-bottom:0}
   </nav>
 </header>
 <main>
-<section class="hero" tabindex="0"><svg viewBox="0 0 1200 520" role="img" aria-label="해솔마을 바닷가 풍경" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="sg1" x1="0" y1="0" x2="0" y2="1">
-<stop offset="0" stop-color="#6a4c8c"/><stop offset=".55" stop-color="#f28b5b"/><stop offset="1" stop-color="#ffd28a"/></linearGradient>
-<linearGradient id="wg1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2f7bb5"/><stop offset="1" stop-color="#1d4e7a"/></linearGradient></defs>
-<rect width="1200" height="300" fill="url(#sg1)"/><circle cx="864.0" cy="300" r="68" fill="#ffe2a6" opacity=".95"/><rect y="300" width="1200" height="220" fill="url(#wg1)"/><rect x="807" y="310" width="114" height="4" rx="2" fill="#ffd28a" opacity="0.70"/><rect x="814" y="322" width="100" height="4" rx="2" fill="#ffd28a" opacity="0.57"/><rect x="821" y="334" width="86" height="4" rx="2" fill="#ffd28a" opacity="0.44"/><rect x="828" y="346" width="72" height="4" rx="2" fill="#ffd28a" opacity="0.31"/><path d="M0 300 Q 180 180 420 260 T 760 300 Z" fill="#2c5e4f"/><path d="M0 450 q 75 -8 150 0 q 75 -8 150 0 q 75 -8 150 0 q 75 -8 150 0 q 75 -8 150 0 q 75 -8 150 0 q 75 -8 150 0 q 75 -8 150 0" fill="none" stroke="#8cc3e6" stroke-width="2" opacity="0.60"/><path d="M0 468 q 75 -8 150 0 q 75 -8 150 0 q 75 -8 150 0 q 75 -8 150 0 q 75 -8 150 0 q 75 -8 150 0 q 75 -8 150 0 q 75 -8 150 0" fill="none" stroke="#8cc3e6" stroke-width="2" opacity="0.45"/><path d="M0 486 q 75 -8 150 0 q 75 -8 150 0 q 75 -8 150 0 q 75 -8 150 0 q 75 -8 150 0 q 75 -8 150 0 q 75 -8 150 0 q 75 -8 150 0" fill="none" stroke="#8cc3e6" stroke-width="2" opacity="0.30"/><path d="M0 504 q 75 -8 150 0 q 75 -8 150 0 q 75 -8 150 0 q 75 -8 150 0 q 75 -8 150 0 q 75 -8 150 0 q 75 -8 150 0 q 75 -8 150 0" fill="none" stroke="#8cc3e6" stroke-width="2" opacity="0.15"/><path d="M0 330 Q 260 290 520 340 Q 600 410 380 520 L 0 520 Z" fill="#e9c99b"/><g transform="translate(70,294) scale(1.3)"><rect x="0" y="0" width="40" height="30" fill="#fff4e4"/>
-<polygon points="-5,0 20,-20 45,0" fill="#c8553d"/><rect x="8" y="10" width="9" height="9" fill="#ffd28a"/>
-<rect x="24" y="12" width="9" height="18" fill="#6a4c8c" opacity=".8"/></g><g transform="translate(150,308) scale(1.3)"><rect x="0" y="0" width="40" height="30" fill="#fff4e4"/>
-<polygon points="-5,0 20,-20 45,0" fill="#2f7bb5"/><rect x="8" y="10" width="9" height="9" fill="#ffd28a"/>
-<rect x="24" y="12" width="9" height="18" fill="#6a4c8c" opacity=".8"/></g><g transform="translate(230,294) scale(1.3)"><rect x="0" y="0" width="40" height="30" fill="#fff4e4"/>
-<polygon points="-5,0 20,-20 45,0" fill="#c8553d"/><rect x="8" y="10" width="9" height="9" fill="#ffd28a"/>
-<rect x="24" y="12" width="9" height="18" fill="#6a4c8c" opacity=".8"/></g><g transform="translate(320,308) scale(1.3)"><rect x="0" y="0" width="40" height="30" fill="#fff4e4"/>
-<polygon points="-5,0 20,-20 45,0" fill="#6a4c8c"/><rect x="8" y="10" width="9" height="9" fill="#ffd28a"/>
-<rect x="24" y="12" width="9" height="18" fill="#6a4c8c" opacity=".8"/></g><g transform="translate(410,294) scale(1.3)"><rect x="0" y="0" width="40" height="30" fill="#fff4e4"/>
-<polygon points="-5,0 20,-20 45,0" fill="#c8553d"/><rect x="8" y="10" width="9" height="9" fill="#ffd28a"/>
-<rect x="24" y="12" width="9" height="18" fill="#6a4c8c" opacity=".8"/></g><g transform="translate(40,310) scale(1.1)"><rect x="-3" y="0" width="6" height="22" fill="#5b3b2a"/>
-<polygon points="0,-40 -18,-8 18,-8" fill="#2c5e4f"/><polygon points="0,-28 -22,6 22,6" fill="#2c5e4f"/></g><g transform="translate(120,310) scale(1.1)"><rect x="-3" y="0" width="6" height="22" fill="#5b3b2a"/>
-<polygon points="0,-40 -18,-8 18,-8" fill="#2c5e4f"/><polygon points="0,-28 -22,6 22,6" fill="#2c5e4f"/></g><g transform="translate(290,310) scale(1.1)"><rect x="-3" y="0" width="6" height="22" fill="#5b3b2a"/>
-<polygon points="0,-40 -18,-8 18,-8" fill="#2c5e4f"/><polygon points="0,-28 -22,6 22,6" fill="#2c5e4f"/></g><g transform="translate(480,310) scale(1.1)"><rect x="-3" y="0" width="6" height="22" fill="#5b3b2a"/>
-<polygon points="0,-40 -18,-8 18,-8" fill="#2c5e4f"/><polygon points="0,-28 -22,6 22,6" fill="#2c5e4f"/></g><g transform="translate(530,310) scale(1.1)"><rect x="-3" y="0" width="6" height="22" fill="#5b3b2a"/>
-<polygon points="0,-40 -18,-8 18,-8" fill="#2c5e4f"/><polygon points="0,-28 -22,6 22,6" fill="#2c5e4f"/></g><g transform="translate(1080,310) scale(1.4)"><polygon points="-12,0 12,0 7,-70 -7,-70" fill="#fff4e4"/>
-<rect x="-10" y="-50" width="20" height="8" fill="#c8553d"/><rect x="-11" y="-24" width="22" height="8" fill="#c8553d"/>
-<rect x="-9" y="-84" width="18" height="14" fill="#ffd28a"/><polygon points="-11,-84 0,-96 11,-84" fill="#c8553d"/>
-<polygon points="9,-78 70,-92 70,-64" fill="#ffe2a6" opacity=".35"/></g><g transform="translate(700,360) scale(1.2)"><path d="M0 0 h50 l-8 12 h-34z" fill="#fff4e4"/>
-<rect x="23" y="-30" width="3" height="30" fill="#5b3b2a"/><polygon points="26,-28 26,-4 44,-4" fill="#f28b5b"/></g><g transform="translate(880,410) scale(0.9)"><path d="M0 0 h50 l-8 12 h-34z" fill="#fff4e4"/>
-<rect x="23" y="-30" width="3" height="30" fill="#5b3b2a"/><polygon points="26,-28 26,-4 44,-4" fill="#f28b5b"/></g><path d="M150 60 q 8 -8 16 0 q 8 -8 16 0" fill="none" stroke="#3b3470" stroke-width="2"/><path d="M230 90 q 8 -8 16 0 q 8 -8 16 0" fill="none" stroke="#3b3470" stroke-width="2"/></svg>
+<section class="hero" tabindex="0"><img class="hero-img" src="images/hero.jpg" width="1672" height="941" alt="노을 진 바다와 등대, 언덕 위 집들과 작은 항구가 보이는 해솔마을 풍경">
   <div class="hero-text"><h1>파도 소리로 쉬어 가는 곳, 해솔마을</h1><p>소나무 숲과 노을 바다가 기다리는 조용하고 따뜻한 바닷가 작은 마을</p></div>
 </section>
 <h2>해솔마을에서 무엇을 할까요?</h2>
@@ -225,7 +202,7 @@ tr:last-child td{border-bottom:0}
   // 큰 그림을 다시 클릭해도 확대 효과가 처음부터 다시 나오게
   var hero=document.querySelector('.hero');
   if(hero){hero.addEventListener('click',function(){
-    var art=hero.querySelector('svg');
+    var art=hero.querySelector('.hero-img');
     art.style.animation='none'; art.getBoundingClientRect(); art.style.animation='';
   });}
   document.querySelectorAll('.faq-q').forEach(function(q){
