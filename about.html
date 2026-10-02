@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="해솔마을의 이야기와 기본 정보">
+<title>마을 소개 | 해솔마을</title>
+<style>
+:root{
+  --sea-deep:#1d4e7a; --sea:#2f7bb5; --sea-light:#8cc3e6;
+  --sunset:#f28b5b; --sunset-light:#ffd28a; --dusk:#6a4c8c;
+  --ink:#24323f; --muted:#5d6b78; --paper:#fffaf3; --card:#ffffff;
+  --line:#efe2d2; --radius:16px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",sans-serif;
+  background:var(--paper);color:var(--ink);line-height:1.7;font-size:16px}
+a{color:inherit}
+img,svg{display:block;max-width:100%}
+
+/* 메뉴 */
+.site-header{position:sticky;top:0;z-index:10;background:rgba(255,250,243,.95);
+  backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.nav-wrap{max-width:1100px;margin:0 auto;padding:12px 16px;display:flex;
+  align-items:center;justify-content:space-between;gap:12px}
+.logo{display:flex;align-items:center;gap:8px;font-weight:800;font-size:1.25rem;
+  color:var(--sea-deep);text-decoration:none;white-space:nowrap}
+.menu-toggle{position:absolute;opacity:0;pointer-events:none}
+.menu-btn .when-open{display:none}
+.menu-btn{display:none;user-select:none;background:var(--sea-deep);color:#fff;border:0;border-radius:10px;
+  padding:8px 14px;font-size:1rem;cursor:pointer;font-family:inherit}
+.menu{display:flex;flex-wrap:wrap;gap:4px;list-style:none;justify-content:flex-end}
+.menu a{display:block;padding:6px 10px;border-radius:999px;text-decoration:none;
+  font-size:.92rem;color:var(--ink);white-space:nowrap}
+.menu a:hover{background:#fbe9d8}
+.menu a.active{background:var(--sunset);color:#fff;font-weight:700}
+
+/* 공통 */
+main{max-width:1100px;margin:0 auto;padding:0 16px 48px}
+.hero{margin:20px 0 28px;border-radius:24px;overflow:hidden;position:relative;
+  box-shadow:0 10px 30px rgba(29,78,122,.15)}
+.hero-img{display:block;width:100%;height:auto;aspect-ratio:1672/941;object-fit:cover;will-change:transform;backface-visibility:hidden}
+.hero{cursor:zoom-in;outline:none}
+/* 큰 그림: 마우스를 올리거나 클릭하면 1초 정도 커졌다가 원래 크기로 */
+@keyframes hero-pop{0%,100%{transform:scale(1)}20%,80%{transform:scale(1.06)}}
+@keyframes hero-pop-click{0%,100%{transform:scale(1)}20%,80%{transform:scale(1.06)}}
+.hero:hover .hero-img{animation:hero-pop 1.4s ease}
+.hero:focus .hero-img{animation:hero-pop-click 1.4s ease}
+.hero:focus-visible{box-shadow:0 0 0 4px var(--sunset),0 10px 30px rgba(29,78,122,.15)}
+.hero-text{position:absolute;left:0;right:0;bottom:0;padding:24px;
+  background:linear-gradient(transparent,rgba(20,40,70,.65));color:#fff}
+.hero-text h1{font-size:clamp(1.6rem,4vw,2.6rem);line-height:1.3}
+.hero-text p{font-size:clamp(.95rem,2.2vw,1.15rem);opacity:.95}
+h2{font-size:1.5rem;color:var(--sea-deep);margin:32px 0 14px}
+h3{font-size:1.15rem;color:var(--sea-deep)}
+.lead{font-size:1.08rem;color:var(--muted);margin-bottom:12px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  overflow:hidden;box-shadow:0 4px 14px rgba(0,0,0,.04);display:flex;flex-direction:column}
+.card svg,.card-img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
+.card-body{padding:14px 16px 18px}
+.card-body p{color:var(--muted);font-size:.95rem}
+a.card{text-decoration:none;transition:transform .2s,box-shadow .2s}
+a.card:hover{transform:translateY(-4px);box-shadow:0 10px 24px rgba(29,78,122,.15)}
+.more{display:inline-block;margin-top:6px;color:var(--sunset);font-weight:700}
+.card-body .price{margin-top:6px;font-weight:800;color:var(--sunset)}
+.tag{display:inline-block;background:#fbe9d8;color:#a5512a;border-radius:999px;
+  padding:2px 10px;font-size:.8rem;margin-bottom:6px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px}
+.two{display:grid;gap:24px;grid-template-columns:1fr 1fr;align-items:center}
+.two img,.two svg{border-radius:var(--radius);width:100%;height:auto}
+table{width:100%;border-collapse:collapse;background:var(--card);border-radius:var(--radius);overflow:hidden}
+th,td{padding:12px 14px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{background:var(--sea-deep);color:#fff;font-weight:700;white-space:nowrap}
+tr:last-child td{border-bottom:0}
+.info th{background:#f6ede2;color:var(--sea-deep);width:30%}
+
+/* 시간표 (코스) */
+.timeline{list-style:none;position:relative;padding-left:26px}
+.timeline::before{content:"";position:absolute;left:8px;top:6px;bottom:6px;width:3px;
+  background:linear-gradient(var(--sea),var(--sunset));border-radius:2px}
+.timeline li{position:relative;margin-bottom:16px}
+.timeline li::before{content:"";position:absolute;left:-24px;top:7px;width:14px;height:14px;
+  border-radius:50%;background:#fff;border:3px solid var(--sunset)}
+.timeline .time{font-weight:800;color:var(--sea-deep);margin-right:8px}
+.day{font-weight:800;color:var(--dusk);margin:10px 0 8px}
+
+/* 갤러리 */
+.gallery{display:grid;gap:14px;grid-template-columns:repeat(3,1fr)}
+.gallery figure{background:var(--card);border-radius:var(--radius);overflow:hidden;border:1px solid var(--line)}
+.gallery svg{width:100%;height:auto;aspect-ratio:1/1}
+.gallery figcaption{padding:8px 12px;font-size:.9rem;color:var(--muted)}
+
+/* FAQ */
+.faq-item{border:1px solid var(--line);border-radius:var(--radius);background:var(--card);margin-bottom:12px;overflow:hidden}
+.faq-q{width:100%;text-align:left;background:none;border:0;padding:16px 48px 16px 18px;
+  font-size:1.02rem;font-weight:700;color:var(--sea-deep);cursor:pointer;position:relative;font-family:inherit}
+.faq-q::after{content:"+";position:absolute;right:18px;top:50%;transform:translateY(-50%);
+  font-size:1.5rem;color:var(--sunset);transition:transform .2s}
+.faq-item.open .faq-q::after{transform:translateY(-50%) rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 18px;color:var(--muted)}
+.faq-item.open .faq-a{padding-bottom:16px}
+
+/* 아래: 연락처 */
+.site-footer{background:var(--sea-deep);color:#e5f0fa;margin-top:24px}
+.footer-wrap{max-width:1100px;margin:0 auto;padding:28px 16px;display:grid;gap:16px;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.site-footer strong{color:var(--sunset-light);display:block;margin-bottom:4px}
+.site-footer small{display:block;text-align:center;padding:12px;border-top:1px solid rgba(255,255,255,.15);opacity:.75}
+
+/* 휴대폰 */
+@media (max-width:860px){
+  .menu-btn{display:block}
+  .menu{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;
+    background:var(--paper);border-bottom:1px solid var(--line);padding:8px 16px 14px;gap:2px}
+  .menu-toggle:checked ~ .menu{display:flex}
+  .menu-toggle:checked + .menu-btn .when-open{display:inline}
+  .menu-toggle:checked + .menu-btn .when-closed{display:none}
+  .menu-toggle:focus-visible + .menu-btn{outline:3px solid var(--sunset);outline-offset:2px}
+  .menu a{border-radius:10px;padding:10px 12px;font-size:1rem}
+  .two{grid-template-columns:1fr}
+  .gallery{grid-template-columns:repeat(2,1fr)}
+  .hero-text{padding:16px}
+  .hero-img{min-height:280px}
+}
+@media (max-width:420px){ .gallery{grid-template-columns:1fr} }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <nav class="nav-wrap" aria-label="주 메뉴">
+    <a class="logo" href="index.html"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><circle cx="15" cy="15" r="15" fill="#ffd28a"/>
+<circle cx="15" cy="16" r="7" fill="#f28b5b"/><rect y="16" width="30" height="14" fill="#2f7bb5"/>
+<path d="M2 21 q4 -3 8 0 t8 0 t8 0" stroke="#8cc3e6" stroke-width="1.5" fill="none"/></svg>해솔마을</a>
+    <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="메뉴 열기">
+    <label class="menu-btn" for="menu-toggle"><span class="when-closed">☰ 메뉴</span><span class="when-open">✕ 닫기</span></label>
+    <ul class="menu" id="menu">
+      <li><a href="index.html">홈</a></li>
+      <li><a href="about.html" class="active" aria-current="page">마을 소개</a></li>
+      <li><a href="spots.html">명소</a></li>
+      <li><a href="food.html">먹거리</a></li>
+      <li><a href="festival.html">축제</a></li>
+      <li><a href="course.html">추천 코스</a></li>
+      <li><a href="stay.html">숙소</a></li>
+      <li><a href="gallery.html">갤러리</a></li>
+      <li><a href="map.html">오시는 길</a></li>
+      <li><a href="faq.html">자주 묻는 질문</a></li>
+    </ul>
+  </nav>
+</header>
+<main>
+<section class="hero" tabindex="0"><img class="hero-img" src="images/festival-lantern-walk.jpg" width="1200" height="675" alt="등불이 켜진 바닷가 산책길과 언덕 위 마을, 멀리 보이는 등대">
+  <div class="hero-text"><h1>마을 소개</h1><p>바다(해)와 소나무(솔)가 함께 사는 마을, 해솔마을 이야기</p></div>
+</section>
+<h2>마을 이야기</h2>
+<div class="two">
+  <div>
+    <p class="lead">해솔마을은 "바다(해)"와 "소나무(솔)"에서 이름을 따왔어요.</p>
+    <p>마을 뒤로는 백 년 넘은 소나무 숲이 바람을 막아 주고, 앞으로는 잔잔한 바다가 펼쳐져 있습니다.
+    예부터 해녀들이 전복을 따고, 집집마다 미역을 말리며 살아온 작은 어촌이에요.</p>
+    <p style="margin-top:10px">해가 지면 바다가 주황빛으로 물들고, 여름밤에는 등불 축제로 마을 전체가 따뜻하게 빛납니다.
+    큰 관광지는 아니지만, 그래서 더 조용하고 느긋하게 머물 수 있는 곳입니다.</p>
+  </div>
+  <img src="images/spots-pine-trail.jpg" width="1200" height="900" loading="lazy" alt="바다가 내려다보이는 소나무 숲 산책길과 나무 벤치">
+</div>
+<h2>기본 정보</h2>
+<table class="info">
+  <tr><th>위치</th><td>남쪽 바닷가, 해솔군 해솔면 (가상)</td></tr>
+  <tr><th>인구</th><td>약 640명 · 280가구</td></tr>
+  <tr><th>면적</th><td>약 8.2㎢ (해안선 길이 6km)</td></tr>
+  <tr><th>특산물</th><td>전복, 미역</td></tr>
+  <tr><th>대표 축제</th><td>해솔 등불 축제 (매년 8월)</td></tr>
+  <tr><th>마을 분위기</th><td>조용하고 따뜻함 — 밤 9시 이후엔 파도 소리만 들려요</td></tr>
+</table>
+</main>
+<footer class="site-footer">
+  <div class="footer-wrap">
+    <div><strong>해솔마을 여행안내소</strong>바닷가마을길 12 (해솔 버스터미널 앞)</div>
+    <div><strong>전화</strong>061-000-1234 (매일 09:00~18:00)</div>
+    <div><strong>이메일</strong>hello@haesol-village.example</div>
+  </div>
+  <small>© 해솔마을 · 이 사이트의 마을과 정보는 모두 가상입니다.</small>
+</footer>
+<script>
+(function(){
+  // 큰 그림을 다시 클릭해도 확대 효과가 처음부터 다시 나오게
+  var hero=document.querySelector('.hero');
+  if(hero){hero.addEventListener('click',function(){
+    var art=hero.querySelector('.hero-img');
+    art.style.animation='none'; art.getBoundingClientRect(); art.style.animation='';
+  });}
+  document.querySelectorAll('.faq-q').forEach(function(q){
+    q.addEventListener('click',function(){
+      var item=q.parentElement, a=item.querySelector('.faq-a');
+      var open=item.classList.toggle('open');
+      q.setAttribute('aria-expanded',open);
+      a.style.maxHeight=open?a.scrollHeight+'px':null;
+    });
+  });
+})();
+</script>
+</body>
+</html>
