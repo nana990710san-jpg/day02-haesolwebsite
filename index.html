@@ -58,7 +58,7 @@ h3{font-size:1.15rem;color:var(--sea-deep)}
 .grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
 .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
   overflow:hidden;box-shadow:0 4px 14px rgba(0,0,0,.04);display:flex;flex-direction:column}
-.card svg{width:100%;height:auto;aspect-ratio:4/3}
+.card svg,.card-img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
 .card-body{padding:14px 16px 18px}
 .card-body p{color:var(--muted);font-size:.95rem}
 a.card{text-decoration:none;transition:transform .2s,box-shadow .2s}
@@ -155,39 +155,7 @@ tr:last-child td{border-bottom:0}
 </section>
 <h2>해솔마을에서 무엇을 할까요?</h2>
 <p class="lead">주말 이틀이면 충분해요. 걷고, 먹고, 등불 아래에서 쉬어 가세요.</p>
-<div class="grid"><a class="card" href="spots.html"><svg viewBox="0 0 400 300" role="img" aria-label="명소 그림" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="sg2" x1="0" y1="0" x2="0" y2="1">
-<stop offset="0" stop-color="#6a4c8c"/><stop offset=".55" stop-color="#f28b5b"/><stop offset="1" stop-color="#ffd28a"/></linearGradient>
-<linearGradient id="wg2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2f7bb5"/><stop offset="1" stop-color="#1d4e7a"/></linearGradient></defs>
-<rect width="400" height="190" fill="url(#sg2)"/><circle cx="110" cy="190" r="39" fill="#ffe2a6" opacity=".95"/><rect y="190" width="400" height="110" fill="url(#wg2)"/><rect x="77" y="200" width="66" height="4" rx="2" fill="#ffd28a" opacity="0.70"/><rect x="84" y="212" width="52" height="4" rx="2" fill="#ffd28a" opacity="0.57"/><rect x="91" y="224" width="38" height="4" rx="2" fill="#ffd28a" opacity="0.44"/><rect x="98" y="236" width="24" height="4" rx="2" fill="#ffd28a" opacity="0.31"/><path d="M220 300 L250 200 Q 320 180 400 200 L400 300Z" fill="#4a4060"/><g transform="translate(320,200) scale(1.2)"><polygon points="-12,0 12,0 7,-70 -7,-70" fill="#fff4e4"/>
-<rect x="-10" y="-50" width="20" height="8" fill="#c8553d"/><rect x="-11" y="-24" width="22" height="8" fill="#c8553d"/>
-<rect x="-9" y="-84" width="18" height="14" fill="#ffd28a"/><polygon points="-11,-84 0,-96 11,-84" fill="#c8553d"/>
-<polygon points="9,-78 70,-92 70,-64" fill="#ffe2a6" opacity=".35"/></g><path d="M0 220 q 25 -8 50 0 q 25 -8 50 0 q 25 -8 50 0 q 25 -8 50 0 q 25 -8 50 0 q 25 -8 50 0 q 25 -8 50 0 q 25 -8 50 0" fill="none" stroke="#8cc3e6" stroke-width="2" opacity="0.60"/><path d="M0 238 q 25 -8 50 0 q 25 -8 50 0 q 25 -8 50 0 q 25 -8 50 0 q 25 -8 50 0 q 25 -8 50 0 q 25 -8 50 0 q 25 -8 50 0" fill="none" stroke="#8cc3e6" stroke-width="2" opacity="0.45"/><path d="M0 256 q 25 -8 50 0 q 25 -8 50 0 q 25 -8 50 0 q 25 -8 50 0 q 25 -8 50 0 q 25 -8 50 0 q 25 -8 50 0 q 25 -8 50 0" fill="none" stroke="#8cc3e6" stroke-width="2" opacity="0.30"/></svg><div class="card-body"><h3>명소</h3><p>노을 등대, 솔숲 산책길 등 꼭 가볼 곳 4곳</p><span class="more">바로가기 →</span></div></a><a class="card" href="food.html"><svg viewBox="0 0 400 300" role="img" aria-label="먹거리 그림" preserveAspectRatio="xMidYMid slice"><defs><radialGradient id="tg3" cx=".5" cy=".4" r=".8"><stop offset="0" stop-color="#ffd28a"/>
-<stop offset="1" stop-color="#f28b5b"/></radialGradient></defs><rect width="400" height="300" fill="url(#tg3)"/>
-<rect y="210" width="400" height="90" fill="#1d4e7a" opacity=".9"/>
-<ellipse cx="200" cy="200" rx="150" ry="58" fill="#fff4e4"/><ellipse cx="200" cy="195" rx="120" ry="42" fill="#fffaf3"/><ellipse cx="200" cy="190" rx="105" ry="34" fill="#efe0b0"/><ellipse cx="165" cy="180" rx="14" ry="8" fill="#5f7f5a"/><ellipse cx="210" cy="195" rx="14" ry="8" fill="#5f7f5a"/><ellipse cx="240" cy="178" rx="14" ry="8" fill="#5f7f5a"/><path d="M150 150 q10 -20 0 -40 M200 145 q10 -20 0 -40 M250 150 q10 -20 0 -40" stroke="#fff" stroke-width="3" fill="none" opacity=".7"/></svg><div class="card-body"><h3>먹거리</h3><p>갓 잡은 전복과 해솔 미역으로 만든 바다 밥상</p><span class="more">바로가기 →</span></div></a><a class="card" href="festival.html"><svg viewBox="0 0 400 300" role="img" aria-label="축제 그림" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="sg4" x1="0" y1="0" x2="0" y2="1">
-<stop offset="0" stop-color="#3b3470"/><stop offset=".55" stop-color="#6a4c8c"/><stop offset="1" stop-color="#f28b5b"/></linearGradient>
-<linearGradient id="wg4" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2f7bb5"/><stop offset="1" stop-color="#1d4e7a"/></linearGradient></defs>
-<rect width="400" height="190" fill="url(#sg4)"/><rect y="190" width="400" height="110" fill="url(#wg4)"/><path d="M0 215 q 25 -8 50 0 q 25 -8 50 0 q 25 -8 50 0 q 25 -8 50 0 q 25 -8 50 0 q 25 -8 50 0 q 25 -8 50 0 q 25 -8 50 0" fill="none" stroke="#8cc3e6" stroke-width="2" opacity="0.60"/><path d="M0 233 q 25 -8 50 0 q 25 -8 50 0 q 25 -8 50 0 q 25 -8 50 0 q 25 -8 50 0 q 25 -8 50 0 q 25 -8 50 0 q 25 -8 50 0" fill="none" stroke="#8cc3e6" stroke-width="2" opacity="0.45"/><path d="M0 251 q 25 -8 50 0 q 25 -8 50 0 q 25 -8 50 0 q 25 -8 50 0 q 25 -8 50 0 q 25 -8 50 0 q 25 -8 50 0 q 25 -8 50 0" fill="none" stroke="#8cc3e6" stroke-width="2" opacity="0.30"/><g transform="translate(40,70) scale(1)"><line x1="0" y1="-14" x2="0" y2="-4" stroke="#5b3b2a" stroke-width="1.5"/>
-<rect x="-9" y="-4" width="18" height="22" rx="7" fill="#ffb35c"/><rect x="-9" y="-4" width="18" height="22" rx="7" fill="#ffe2a6" opacity=".45"/>
-<circle cx="0" cy="7" r="16" fill="#ffd28a" opacity=".25"/></g><g transform="translate(110,50) scale(1)"><line x1="0" y1="-14" x2="0" y2="-4" stroke="#5b3b2a" stroke-width="1.5"/>
-<rect x="-9" y="-4" width="18" height="22" rx="7" fill="#ffb35c"/><rect x="-9" y="-4" width="18" height="22" rx="7" fill="#ffe2a6" opacity=".45"/>
-<circle cx="0" cy="7" r="16" fill="#ffd28a" opacity=".25"/></g><g transform="translate(180,80) scale(1)"><line x1="0" y1="-14" x2="0" y2="-4" stroke="#5b3b2a" stroke-width="1.5"/>
-<rect x="-9" y="-4" width="18" height="22" rx="7" fill="#ffb35c"/><rect x="-9" y="-4" width="18" height="22" rx="7" fill="#ffe2a6" opacity=".45"/>
-<circle cx="0" cy="7" r="16" fill="#ffd28a" opacity=".25"/></g><g transform="translate(250,45) scale(1)"><line x1="0" y1="-14" x2="0" y2="-4" stroke="#5b3b2a" stroke-width="1.5"/>
-<rect x="-9" y="-4" width="18" height="22" rx="7" fill="#ffb35c"/><rect x="-9" y="-4" width="18" height="22" rx="7" fill="#ffe2a6" opacity=".45"/>
-<circle cx="0" cy="7" r="16" fill="#ffd28a" opacity=".25"/></g><g transform="translate(320,75) scale(1)"><line x1="0" y1="-14" x2="0" y2="-4" stroke="#5b3b2a" stroke-width="1.5"/>
-<rect x="-9" y="-4" width="18" height="22" rx="7" fill="#ffb35c"/><rect x="-9" y="-4" width="18" height="22" rx="7" fill="#ffe2a6" opacity=".45"/>
-<circle cx="0" cy="7" r="16" fill="#ffd28a" opacity=".25"/></g><g transform="translate(370,40) scale(1)"><line x1="0" y1="-14" x2="0" y2="-4" stroke="#5b3b2a" stroke-width="1.5"/>
-<rect x="-9" y="-4" width="18" height="22" rx="7" fill="#ffb35c"/><rect x="-9" y="-4" width="18" height="22" rx="7" fill="#ffe2a6" opacity=".45"/>
-<circle cx="0" cy="7" r="16" fill="#ffd28a" opacity=".25"/></g><g transform="translate(90,230) scale(0.7)"><line x1="0" y1="-14" x2="0" y2="-4" stroke="#5b3b2a" stroke-width="1.5"/>
-<rect x="-9" y="-4" width="18" height="22" rx="7" fill="#ffb35c"/><rect x="-9" y="-4" width="18" height="22" rx="7" fill="#ffe2a6" opacity=".45"/>
-<circle cx="0" cy="7" r="16" fill="#ffd28a" opacity=".25"/></g><g transform="translate(170,255) scale(0.7)"><line x1="0" y1="-14" x2="0" y2="-4" stroke="#5b3b2a" stroke-width="1.5"/>
-<rect x="-9" y="-4" width="18" height="22" rx="7" fill="#ffb35c"/><rect x="-9" y="-4" width="18" height="22" rx="7" fill="#ffe2a6" opacity=".45"/>
-<circle cx="0" cy="7" r="16" fill="#ffd28a" opacity=".25"/></g><g transform="translate(260,240) scale(0.7)"><line x1="0" y1="-14" x2="0" y2="-4" stroke="#5b3b2a" stroke-width="1.5"/>
-<rect x="-9" y="-4" width="18" height="22" rx="7" fill="#ffb35c"/><rect x="-9" y="-4" width="18" height="22" rx="7" fill="#ffe2a6" opacity=".45"/>
-<circle cx="0" cy="7" r="16" fill="#ffd28a" opacity=".25"/></g><g transform="translate(330,265) scale(0.7)"><line x1="0" y1="-14" x2="0" y2="-4" stroke="#5b3b2a" stroke-width="1.5"/>
-<rect x="-9" y="-4" width="18" height="22" rx="7" fill="#ffb35c"/><rect x="-9" y="-4" width="18" height="22" rx="7" fill="#ffe2a6" opacity=".45"/>
-<circle cx="0" cy="7" r="16" fill="#ffd28a" opacity=".25"/></g></svg><div class="card-body"><h3>해솔 등불 축제</h3><p>매년 8월, 바다 위에 떠오르는 수천 개의 등불</p><span class="more">바로가기 →</span></div></a></div>
+<div class="grid"><a class="card" href="spots.html"><img class="card-img" src="images/spots-sunset-deck.jpg" width="1200" height="900" loading="lazy" alt="노을 지는 바다를 바라보는 해안 전망대"><div class="card-body"><h3>명소</h3><p>노을 등대, 솔숲 산책길 등 꼭 가볼 곳 4곳</p><span class="more">바로가기 →</span></div></a><a class="card" href="food.html"><img class="card-img" src="images/food-abalone-porridge.jpg" width="1200" height="900" loading="lazy" alt="전복을 얹은 따뜻한 전복죽 한 그릇"><div class="card-body"><h3>먹거리</h3><p>갓 잡은 전복과 해솔 미역으로 만든 바다 밥상</p><span class="more">바로가기 →</span></div></a><a class="card" href="festival.html"><img class="card-img" src="images/festival-lantern-beach.jpg" width="1200" height="900" loading="lazy" alt="밤바다에 소원 등불을 띄우는 사람들"><div class="card-body"><h3>해솔 등불 축제</h3><p>매년 8월, 바다 위에 떠오르는 수천 개의 등불</p><span class="more">바로가기 →</span></div></a></div>
 </main>
 <footer class="site-footer">
   <div class="footer-wrap">
