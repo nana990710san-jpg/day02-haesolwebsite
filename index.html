@@ -40,9 +40,13 @@ img,svg{display:block;max-width:100%}
 main{max-width:1100px;margin:0 auto;padding:0 16px 48px}
 .hero{margin:20px 0 28px;border-radius:24px;overflow:hidden;position:relative;
   box-shadow:0 10px 30px rgba(29,78,122,.15)}
-.hero svg{width:100%;height:auto;transition:transform .5s ease}
+.hero svg{width:100%;height:auto}
 .hero{cursor:zoom-in;outline:none}
-.hero:hover svg,.hero:focus svg{transform:scale(1.06)}
+/* 큰 그림: 마우스를 올리거나 클릭하면 1초 정도 커졌다가 원래 크기로 */
+@keyframes hero-pop{0%,100%{transform:scale(1)}20%,80%{transform:scale(1.06)}}
+@keyframes hero-pop-click{0%,100%{transform:scale(1)}20%,80%{transform:scale(1.06)}}
+.hero:hover svg{animation:hero-pop 1.4s ease}
+.hero:focus svg{animation:hero-pop-click 1.4s ease}
 .hero:focus-visible{box-shadow:0 0 0 4px var(--sunset),0 10px 30px rgba(29,78,122,.15)}
 .hero-text{position:absolute;left:0;right:0;bottom:0;padding:24px;
   background:linear-gradient(transparent,rgba(20,40,70,.65));color:#fff}
@@ -218,6 +222,12 @@ tr:last-child td{border-bottom:0}
 </footer>
 <script>
 (function(){
+  // 큰 그림을 다시 클릭해도 확대 효과가 처음부터 다시 나오게
+  var hero=document.querySelector('.hero');
+  if(hero){hero.addEventListener('click',function(){
+    var art=hero.querySelector('svg');
+    art.style.animation='none'; art.getBoundingClientRect(); art.style.animation='';
+  });}
   document.querySelectorAll('.faq-q').forEach(function(q){
     q.addEventListener('click',function(){
       var item=q.parentElement, a=item.querySelector('.faq-a');
